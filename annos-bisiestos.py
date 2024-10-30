@@ -19,3 +19,16 @@
 #1500 es bisiesto
 #Ingrese un anno: 2400
 #2400 es bisiesto
+
+AB = int(input("Enter a year: "))
+
+if AB < 1582:
+    if AB % 4 == 0:
+        print("Es un anno bisiesto")
+    else:
+        print("No es bisiesto")
+else:
+    if (AB % 400 ==0) or (AB % 4 ==0 and AB % 100 != 0):
+        print("Es un anno bisiesto")
+    else: 
+        print("No es bisiesto")
