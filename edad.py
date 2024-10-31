@@ -8,20 +8,18 @@
 #Usted tiene 62 annos
 
 #Por supuesto, el resultado entregado depende del día en que su programa será ejecutado.
+#El programa debe tener en cuenta si el cumpleaños ingresado ya pasó durante este año, o si todavía no ocurre.
 
-#Para obtener la fecha actual, puede hacerlo usando la función localtime que viene en el módulo time. Los valores se obtienen de la siguiente manera (suponiendo que hoy es 11 de marzo de 2011):
-print("Enter your birthday")
+print("Type your birthday")
 day = int(input("Write the number of the day you were born: "))
-month = int(input("Write the number of the month you were born"))
-year = int(input("Write the number of the year you were born"))
+month = int(input("Write the number of the month you were born: "))
+year = int(input("Write the number of the year you were born: "))
 
 from time import localtime
 t = localtime()
-t.tm_mday
-31
-t.tm_mon
-10
-t.tm_year
-2024
+bYear = t.tm_year - year 
 
-#INCOMPLETO
+if (t.tm_mon < month) or (t.tm_mon == month and t.tm_mday < day):
+    bYear -= 1 
+    
+print(f""" You are {bYear} years old""")
