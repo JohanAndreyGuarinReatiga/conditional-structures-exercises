@@ -1,37 +1,15 @@
-a = 5
-b =  7
-p = 7
+#Triángulos
+#Los tres lados a, b y c de un triángulo deben satisfacer la desigualdad triangular: cada uno de los lados no puede ser más largo que la suma de los otros dos.
+a = float(input("Escriba el lado a: "))
+b = float(input("Escriba el lado b: "))
+c = float(input("Escriba el lado c: "))
 
-if a >= 6 and (a - b >= 2):
-    print("A wins")
-elif a >= 6 and (a - b >= 2):
-    print("B wins")
-    
-    #sin terminar
-
-
-# Solicitar los juegos ganados por A y B
-gamesA = int(input("Juegos ganados por A: "))
-gamesB = int(input("Juegos ganados por B: "))
-
-# Verificar si la entrada es inválida
-
-if gamesA > 7 or gamesB > 7 or (gamesA == 7 and gamesB < 5) or (gamesB == 7 and gamesA < 5) or abs(gamesA - gamesB) > 2:
-    print("Invalido")
-# Verificar si A gana el set
-
-elif gamesA == 6 and gamesB <= 4:
-    print("Gano A")
-elif gamesA == 7 and (gamesB == 5 or gamesB == 6):
-    print("Gano A")
-# Verificar si B gana el set
-
-elif gamesB == 6 and gamesA <= 4:
-    print("Gano B")
-elif gamesB == 7 and (gamesA == 5 or gamesA == 6):
-    print("Gano B")
-    
-# Si ninguno ha ganado, el set aún no termina
-
+if a + b > c and a + c > b and b + c > a:
+    if a == b == c:
+        print("El triangulo es equilatero.")
+    elif a == b or a == c or b == c:
+        print("El triangulo es isoceles.")
+    else:
+        print("El triangulo es escaleno.")
 else:
-    print("Aun no termina")
+    print("No es un triangulo valido.")
