@@ -1,26 +1,23 @@
-#Calculadora
-#Escriba un programa que simule una calculadora básica, este puede realizar operación de suma, resta, multiplicación y división.
+#Años bisiestos
+#Cuando la Tierra completa una órbita alrededor del Sol, no han transcurrido exactamente 365 rotaciones sobre sí misma, sino un poco más. Más precisamente, la diferencia es de más o menos un cuarto de día.
 
-#El programa debe recibir como entrada 2 números reales y un operador, que puede ser +, -, * o /.
+#Para evitar que las estaciones se desfasen con el calendario, el calendario juliano introdujo la regla de introducir un día adicional en los años divisibles por 4 (llamados bisiestos), para tomar en consideración los cuatro cuartos de día acumulados.
 
-#La salida del programa debe ser el resultado de la operación.
+#Sin embargo, bajo esta regla sigue habiendo un desfase, que es de aproximadamente 3/400 de día.
 
-FirstNumber = float(input("Enter the first operand: "))
-Operator = input("Write an operator +  -  *  / : ")
-SecondNumber = float(input("Enter the second operand: "))
+#Para corregir este desfase, en el año 1582 el papa Gregorio XIII introdujo un nuevo calendario, en el que el último año de cada siglo dejaba de ser bisiesto, a no ser que fuera divisible por 400.
 
-if Operator == "+":
-    Result = FirstNumber + SecondNumber
-elif Operator == "-":
-    Result = FirstNumber - SecondNumber
-elif Operator == "*":
-    Result = FirstNumber * SecondNumber
-elif Operator == "/":
-    if SecondNumber != 0:
-        Result = FirstNumber / SecondNumber
+#Escriba un programa que indique si un año es bisiesto o no, teniendo en cuenta cuál era el calendario vigente en ese año:
+
+AB = int(input("Enter a year: "))
+
+if AB < 1582:
+    if AB % 4 == 0:
+        print("Es un anno bisiesto")
     else:
-        Result = "Oops, you cant divde by zero"
+        print("No es bisiesto")
 else:
-    Result = "Oops, you have to write an operator"
-
-print("The result is:", Result)
+    if (AB % 400 ==0) or (AB % 4 ==0 and AB % 100 != 0):
+        print("Es un anno bisiesto")
+    else: 
+        print("No es bisiesto")
