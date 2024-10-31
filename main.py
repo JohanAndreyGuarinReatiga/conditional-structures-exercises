@@ -1,30 +1,28 @@
-#Ordenamiento
-#Escriba un programa que reciba como entrada dos números, y los muestre ordenados de menor a mayor:
+#Palabra más larga
+#Escriba un programa que pida al usuario dos palabras, y que indique cuál de ellas es la más larga y por cuántas letras lo es.
 
-print("Choose an option ")
-print("1. Organize two numbers")
-print("2. Organize three numbers")
-print("3. Organize four numbrs")
+#Palabra 1: edificio
+#Palabra 2: tren
+#La palabra edificio tiene 4 letras mas que tren.
+#Palabra 1: sol
+#Palabra 2: paralelepipedo
+#La palabra paralelepipedo tiene 11 letras mas que sol
+#Palabra 1: plancha
+#Palabra 2: lapices
+#Las dos palabras tienen el mismo largo
 
-option = int(input("Enter the number of the desired option: "))
+firstWord = input("Word 1: ")
+secondWord = input("Word 2: ")
 
-if option == 1:
-    num1 = int(input("Enter the first number: "))
-    num2 = int(input("Enter de second number: "))
-    sortedNums = sorted([num1, num2])
-    print("Numbers in order", " ".join(map(str, sortedNums)))
-elif option == 2:
-    num1 = int(input("Enter the first number: "))
-    num2 = int(input("Enter de second number: "))
-    num3 = int(input("Enter the third number: "))
-    sortedNums = sorted([num1, num2, num3])
-    print("Numbers in order", " ".join(map(str, sortedNums)))
-elif option == 3:
-    num1 = int(input("Enter the first number: "))
-    num2 = int(input("Enter de second number: "))
-    num3 = int(input("Enter the third number: "))
-    num4 = int(input("Enter the fourth number: "))
-    sortedNums = sorted([num1, num2, num3, num4])
-    print("Numbers in order:", " ".join(map(str, sortedNums)))
+lenghtOne = len(firstWord)
+lenghtTwo = len(secondWord)
+
+if lenghtOne > lenghtTwo:
+    difference = lenghtOne - lenghtTwo
+    print(f"The word '{firstWord}' is {difference} letters longer than '{secondWord}'.")
+elif lenghtTwo > lenghtOne:
+    difference = lenghtTwo - lenghtOne
+    print(f"The word '{secondWord}' is {difference} letters longer than '{firstWord}'.")
 else:
-    print("No valid option. Choose between 1, 2 or 3.")
+    print("Both words have the same length.")
+
