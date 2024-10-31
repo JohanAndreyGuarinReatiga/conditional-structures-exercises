@@ -1,17 +1,37 @@
-#El índice de masa corporal es el cuociente entre el peso del individuo en kilos y el cuadrado de su estatura en metros.
-#Escriba un programa que reciba como entrada la estatura, el peso y la edad de una persona, y le entregue su condición de riesgo.
+a = 5
+b =  7
+p = 7
 
-height = float(input("Enter you height in meters: "))
-weight = int(input("Enter you weight in kilos: "))
-age = int(input("Write your age: "))
+if a >= 6 and (a - b >= 2):
+    print("A wins")
+elif a >= 6 and (a - b >= 2):
+    print("B wins")
+    
+    #sin terminar
 
-imc = weight / (height**2)  #utilizar mejor los [math.pow(numero, potencia)] para elevar
 
-if age < 45 and imc < 22.0:
-    print("You have low risk")
-if age < 45 and imc >= 22.0:
-    print("You have Medium risk")
-if age >= 45 and imc < 22.0:
-    print("You have Medium risk")
-if age >= 45 and imc >= 22.0: 
-    print("You have High risk")
+# Solicitar los juegos ganados por A y B
+gamesA = int(input("Juegos ganados por A: "))
+gamesB = int(input("Juegos ganados por B: "))
+
+# Verificar si la entrada es inválida
+
+if gamesA > 7 or gamesB > 7 or (gamesA == 7 and gamesB < 5) or (gamesB == 7 and gamesA < 5) or abs(gamesA - gamesB) > 2:
+    print("Invalido")
+# Verificar si A gana el set
+
+elif gamesA == 6 and gamesB <= 4:
+    print("Gano A")
+elif gamesA == 7 and (gamesB == 5 or gamesB == 6):
+    print("Gano A")
+# Verificar si B gana el set
+
+elif gamesB == 6 and gamesA <= 4:
+    print("Gano B")
+elif gamesB == 7 and (gamesA == 5 or gamesA == 6):
+    print("Gano B")
+    
+# Si ninguno ha ganado, el set aún no termina
+
+else:
+    print("Aun no termina")
