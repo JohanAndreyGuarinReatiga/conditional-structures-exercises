@@ -1,15 +1,30 @@
-#Triángulos
-#Los tres lados a, b y c de un triángulo deben satisfacer la desigualdad triangular: cada uno de los lados no puede ser más largo que la suma de los otros dos.
-a = float(input("Escriba el lado a: "))
-b = float(input("Escriba el lado b: "))
-c = float(input("Escriba el lado c: "))
+#Ordenamiento
+#Escriba un programa que reciba como entrada dos números, y los muestre ordenados de menor a mayor:
 
-if a + b > c and a + c > b and b + c > a:
-    if a == b == c:
-        print("El triangulo es equilatero.")
-    elif a == b or a == c or b == c:
-        print("El triangulo es isoceles.")
-    else:
-        print("El triangulo es escaleno.")
+print("Selecciona una opción:")
+print("1. Ordenar dos números")
+print("2. Ordenar tres números")
+print("3. Ordenar cuatro números")
+
+option = int(input("Enter the number of the desired option: "))
+
+if option == 1:
+    num1 = int(input("Enter the first number: "))
+    num2 = int(input("Enter de second number: "))
+    sorted_nums = sorted([num1, num2])
+    print("Números ordenados:", " ".join(map(str, sorted_nums)))
+elif option == 2:
+    num1 = int(input("Ingrese el primer número: "))
+    num2 = int(input("Ingrese el segundo número: "))
+    num3 = int(input("Ingrese el tercer número: "))
+    sorted_nums = sorted([num1, num2, num3])
+    print("Números ordenados:", " ".join(map(str, sorted_nums)))
+elif option == 3:
+    num1 = int(input("Ingrese el primer número: "))
+    num2 = int(input("Ingrese el segundo número: "))
+    num3 = int(input("Ingrese el tercer número: "))
+    num4 = int(input("Ingrese el cuarto número: "))
+    sorted_nums = sorted([num1, num2, num3, num4])
+    print("Números ordenados:", " ".join(map(str, sorted_nums)))
 else:
-    print("No es un triangulo valido.")
+    print("Opción no válida. Por favor, elige 1, 2 o 3.")
